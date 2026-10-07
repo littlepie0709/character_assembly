@@ -11,7 +11,7 @@ Designed for English-speaking Grade 6 learners
 <title>Chinese Radicals Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Patrick+Hand&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    DESIGN SYSTEM — Paper + Ink + Jade + Character Grid
@@ -596,6 +596,113 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:13px;background:var(-
 }
 @media (max-width:1000px){.wgrid,.pgrid2,.lgrid{grid-template-columns:1fr}}
 
+/* =====================================================================
+   CUTE LAYER — rounder jelly buttons, Nunito, cream + jade + yellow + peach,
+   notebook grid with corner dots, sticker cards with washi tape
+   ===================================================================== */
+:root{
+  --ui:"Nunito",system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --hand:"Patrick Hand","Nunito","Comic Sans MS",cursive;
+  --r:20px; --rb:16px;
+  --bg:#FFF8EE; --card:#FFFFFF; --muted:#7A6E66;
+  --line:#F0E4D3; --line-2:#E5D3BD; --ring-bg:#F3E8DA;
+  --peach:#FF9F87; --peach-d:#E8795F; --soft-blue:#FFE6DD;
+  --gridline:rgba(160,110,70,.20);
+  --shadow:0 1px 0 rgba(160,110,70,.10),0 6px 14px -8px rgba(160,110,70,.35);
+  --shadow-up:0 2px 0 rgba(160,110,70,.10),0 14px 24px -10px rgba(160,110,70,.40);
+  --press:#E5D3BD; --press-primary:#121C27; --press-success:#2B8A6E; --press-peach:#D9674C;
+}
+:root[data-theme="dark"]{
+  --bg:#1B2129; --card:#252D37; --muted:#B4AAA1; --line:#343D49; --line-2:#44505E; --ring-bg:#343D49;
+  --soft-blue:#4A3430; --gridline:rgba(255,220,190,.13); --peach:#FFAE99;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 6px 14px -8px rgba(0,0,0,.6); --shadow-up:0 14px 24px -10px rgba(0,0,0,.6);
+  --press:#141920; --press-primary:#B9C2C9;
+}
+body{font-weight:600;background:var(--bg) radial-gradient(circle at 1px 1px,var(--gridline) 1.1px,transparent 0) 0 0/22px 22px}
+.vt,.hello h1{font-family:var(--hand);font-weight:400;letter-spacing:.01em}
+.vt{font-size:36px}
+.hello h1{font-size:44px;line-height:1.05}
+.h3,.level h3,.rhead h2{font-weight:800}
+.hello h1,.vt{background:linear-gradient(transparent 62%,rgba(255,159,135,.32) 62%,rgba(255,159,135,.32) 88%,transparent 88%) no-repeat;background-size:100% 100%;display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.vhead .grow > .vt + .vsub{margin-top:8px}
+/* jelly buttons */
+.btn{border-width:2px;font-weight:800;box-shadow:0 4px 0 var(--press);transition:transform .08s,box-shadow .08s,background .15s}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--press)}
+.btn.primary{box-shadow:0 4px 0 var(--press-primary)}
+.btn.primary:active:not(:disabled){box-shadow:0 1px 0 var(--press-primary)}
+.btn.success{box-shadow:0 4px 0 var(--press-success)}
+.btn.success:active:not(:disabled){box-shadow:0 1px 0 var(--press-success)}
+.back{border-radius:12px;border-width:2px;font-weight:800;box-shadow:0 3px 0 var(--press)}
+.back:active{transform:translateY(2px);box-shadow:0 1px 0 var(--press)}
+.seg{border-radius:16px;border-width:2px}
+.seg button{border-radius:12px;font-weight:800}
+.mini-seg button{font-weight:800}
+.opt{border-width:2.5px;box-shadow:0 5px 0 var(--line-2)}
+.opt:active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 var(--line-2)}
+.opt.ok{box-shadow:0 5px 0 #B7E2D2}
+.opt.no{box-shadow:0 5px 0 #F3C6B8}
+.mi{border-width:2.5px;box-shadow:0 5px 0 var(--line-2)}
+.mi:active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 var(--line-2)}
+.chip,.wchip,.heat button,.tile{border-width:2px;box-shadow:0 3px 0 var(--line-2)}
+.chip:active,.wchip:active,.tile:active{transform:translateY(2px);box-shadow:0 1px 0 var(--line-2)}
+.wchip.on{box-shadow:0 3px 0 var(--press-primary)}
+.search,select,textarea{border-width:2px;border-radius:14px}
+.tag{border-radius:10px;font-weight:800}
+.lv{border-radius:10px;font-weight:800}
+/* peach accents */
+.nav a{border-radius:14px;font-weight:700}
+.nav a.on{background:var(--soft-blue);color:var(--ink)}
+.nav a.on .gi,.nav a.on svg.i{color:var(--peach-d)}
+.wen{border-color:var(--peach);border-width:2px;border-radius:14px}
+.chipstat{border-width:2px;border-radius:14px}
+.chipstat .flame{color:var(--peach-d)}
+.hdr{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+.bnav a.on{background:var(--soft-blue)}
+.bnav a.on .gi,.bnav a.on svg.i{color:var(--peach-d)}
+.ring .fgc{stroke:var(--jade)}
+.qeq .q-mark{border-color:var(--peach);color:var(--peach-d);border-radius:16px}
+/* sticker cards + washi tape */
+.card,.rcard,.hubcard,.stat{border:2px solid var(--card);box-shadow:var(--shadow)}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .rcard,:root[data-theme="dark"] .hubcard{border-color:var(--line)}
+.rcard:nth-child(3n+1),.hubcard:nth-child(3n+1),.stats4 .stat:nth-child(odd),.level:nth-child(odd){transform:rotate(-.6deg)}
+.rcard:nth-child(3n+2),.hubcard:nth-child(3n+2),.stats4 .stat:nth-child(even),.level:nth-child(even){transform:rotate(.5deg)}
+.rcard:nth-child(3n),.hubcard:nth-child(3n){transform:rotate(-.2deg)}
+.rcard:hover,.hubcard:hover:not(:disabled){transform:translateY(-4px) rotate(0deg)}
+.rcard.mast{border-color:var(--jade)}
+.rcard.rev{border-color:var(--soft-yellow)}
+.hello,.level,.ringcard,.chero,.rhead,.wcard{position:relative}
+.hello::before,.level::before,.ringcard::before,.chero::before,.rhead::before,.wcard::before{content:"";position:absolute;top:-10px;left:50%;width:86px;height:22px;transform:translateX(-50%) rotate(-3deg);border-radius:3px;opacity:.75;pointer-events:none;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px),var(--tape,#FFC9B9)}
+.hello::before{left:12%;--tape:#FFD98A}
+.ringcard::before{--tape:#B9E6D6;transform:translateX(-50%) rotate(4deg)}
+.level.l1::before{--tape:#B9E6D6} .level.l2::before{--tape:#FFC9B9;transform:translateX(-50%) rotate(2deg)} .level.l3::before{--tape:#FFD98A}
+.chero::before{--tape:#FFD98A} .wcard::before{--tape:#B9E6D6} .rhead::before{left:110px;--tape:#FFC9B9}
+.level .mod .ic,.hubcard .ic{border-radius:14px}
+.l2 .mod .ic{background:var(--soft-blue)}
+/* notebook grid: rounded boxes, corner dots */
+.gbox{border-radius:16px;border:2px solid var(--gridline)}
+.wboard{border-radius:18px;border:2px solid var(--gridline)}
+.wboard.blank::after{content:"写";position:absolute;right:12px;bottom:8px;font-family:var(--zh);font-size:22px;font-weight:600;color:var(--gridline);pointer-events:none}
+.board{border-radius:22px;border:2px solid var(--gridline)}
+.board .slot.empty::after,.qeq .q-mark::after{content:"写";position:absolute;right:8px;bottom:4px;font-family:var(--zh);font-size:14px;font-weight:600;color:var(--gridline)}
+.qeq .q-mark{position:relative}
+.cell{border-radius:16px;border-width:2px}
+.lrow{border-radius:16px;border-width:2px}
+/* sparkles on correct answers */
+.spark{position:fixed;z-index:70;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;animation:spark .48s ease-out forwards}
+.spark svg{width:100%;height:100%;display:block}
+@keyframes spark{0%{transform:translate(0,0) scale(.3) rotate(0);opacity:1}70%{opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1) rotate(90deg);opacity:0}}
+@media print{
+  body{background:#fff}
+  .rcard,.hubcard,.stat,.level{transform:none !important}
+  .card::before{display:none}
+}
+@media (max-width:820px){
+  .vt{font-size:30px} .hello h1{font-size:36px}
+  .rcard:nth-child(n),.hubcard:nth-child(n),.stats4 .stat:nth-child(n),.level:nth-child(n){transform:none}
+}
+@media (prefers-reduced-motion:reduce){.rcard:hover,.hubcard:hover{transform:none}}
+
 /* ===== responsive ===== */
 @media (max-width:1000px){
   .levels{grid-template-columns:1fr}
@@ -1105,7 +1212,7 @@ const BAKED_LESSONS = /*BAKED*/""/*END*/;
 const LOOKALIKE = {
   '氵':['冫','讠'], '冫':['氵','讠'], '讠':['氵','冫'], '礻':['衤','扌'], '衤':['礻','扌'], '扌':['木','礻'],
   '亻':['彳','人'], '彳':['亻','犭'], '犭':['彳','扌'], '人':['亻','入'], '厂':['广','户'], '广':['厂','户'], '户':['广','厂'],
-  '门':['冂','口'], '冂':['门','口'], '口':['囗','日'], '囗':['口','日'], '日':['目','白'], '目':['日','白'], '白':['日','目'],
+  '门':['冂','几'], '冂':['门','几'], '口':['日','中'], '囗':['日','目'], '日':['目','白'], '目':['日','白'], '白':['日','目'],
   '土':['士','王'], '士':['土','王'], '王':['土','玉'], '木':['禾','米'], '禾':['木','米'], '米':['木','禾'],
   '刂':['⺈','力'], '⺈':['刂','力'], '力':['刀','刂'], '灬':['火','心'], '火':['灬','米'], '心':['忄','灬'], '忄':['心','亻'],
   '女':['又','攵'], '又':['女','攵'], '攵':['女','欠'], '欠':['攵','又'], '纟':['钅','饣'], '钅':['纟','饣'], '饣':['纟','钅'],
@@ -1236,9 +1343,25 @@ const IC = {
   back: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>'
 };
 // 田字格 / 米字格 writing grid, drawn very faintly behind a character
-const GRID = '<svg class="g" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g stroke="var(--gridline)" stroke-width="1" fill="none"><line x1="50" y1="0" x2="50" y2="100" stroke-dasharray="3 3"/><line x1="0" y1="50" x2="100" y2="50" stroke-dasharray="3 3"/><line x1="0" y1="0" x2="100" y2="100" stroke-dasharray="1.5 3.5"/><line x1="100" y1="0" x2="0" y2="100" stroke-dasharray="1.5 3.5"/></g></svg>';
+const GRID = '<svg class="g" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g stroke="var(--gridline)" stroke-width="1" fill="none"><line x1="50" y1="0" x2="50" y2="100" stroke-dasharray="3 3"/><line x1="0" y1="50" x2="100" y2="50" stroke-dasharray="3 3"/><line x1="0" y1="0" x2="100" y2="100" stroke-dasharray="1.5 3.5"/><line x1="100" y1="0" x2="0" y2="100" stroke-dasharray="1.5 3.5"/></g><g fill="var(--gridline)"><circle cx="7" cy="7" r="2.2"/><circle cx="93" cy="7" r="2.2"/><circle cx="7" cy="93" r="2.2"/><circle cx="93" cy="93" r="2.2"/></g></svg>';
 const gbox = (t, cls = '') => `<div class="gbox ${cls}">${GRID}<span class="zh">${esc(t)}</span></div>`;
 const ICON_LOCK = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+// Little stars and stroke bits that pop out of a correct answer (under half a second)
+function sparkle(el){
+  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const r = el.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+  const shapes = ['<svg viewBox="0 0 20 20"><path d="M10 1l2.6 6.1L19 8l-4.9 4.3L15.5 19 10 15.6 4.5 19l1.4-6.7L1 8l6.4-.9z" fill="#F4C95D"/></svg>',
+    '<svg viewBox="0 0 20 20"><path d="M3 15 17 5" stroke="#3BAA8A" stroke-width="4" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="#FF9F87"/></svg>',
+    '<svg viewBox="0 0 20 20"><path d="M10 2v16M2 10h16" stroke="#F4C95D" stroke-width="4" stroke-linecap="round"/></svg>'];
+  for (let i = 0; i < 9; i++) {
+    const d = document.createElement('span'); d.className = 'spark'; d.innerHTML = shapes[i % shapes.length];
+    const a = (i / 9) * Math.PI * 2 + Math.random() * .5, dist = Math.max(r.width, r.height) * .55 + 18 + Math.random() * 22;
+    d.style.left = cx + 'px'; d.style.top = cy + 'px';
+    d.style.setProperty('--dx', Math.cos(a) * dist + 'px'); d.style.setProperty('--dy', Math.sin(a) * dist + 'px');
+    document.body.appendChild(d); setTimeout(() => d.remove(), 520);
+  }
+}
 let toastT;
 function toast(msg){ const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2600); }
 
@@ -1357,7 +1480,7 @@ function ask(host, q, onNext){
   const btns = [...host.querySelectorAll('.opt')], fb = host.querySelector('.fb'), nextB = host.querySelector('.nextq'), rev = host.querySelector('.reveal');
   const finish = () => {
     done = true;
-    btns.forEach((b, i) => { b.disabled = true; if (q.options[i].ok) { b.classList.add('ok'); b.querySelector('.mk').textContent = '✓'; } });
+    btns.forEach((b, i) => { b.disabled = true; if (q.options[i].ok) { b.classList.add('ok'); b.querySelector('.mk').textContent = '✓'; if (!teacher && first) sparkle(b); } });
     fb.className = 'fb good';
     fb.innerHTML = `<span class="head">✓ ${teacher ? 'Answer' : first ? 'Correct!' : 'Got it!'}</span><span class="body">${q.good}</span>`;
     rev.disabled = true; nextB.hidden = false; nextB.focus({preventScroll: true});
@@ -1859,7 +1982,7 @@ function renderMatch(host, n, onDone){
     const id = l.dataset.id;
     if (rb.dataset.m === id) {
       l.classList.add('done'); rb.classList.add('done'); l.classList.remove('sel'); l.disabled = rb.disabled = true;
-      matched++; markRad(id);
+      matched++; markRad(id); sparkle(rb);
       if (!missedIds.has(id)) radCorrect(id);
       fb.innerHTML = `<span class="okc">✓</span> ${zh(id)} = ${esc(RAD[id].meaning)}`;
       if (matched === set.length) {
@@ -2325,6 +2448,7 @@ function inkStroke(ctx, pts, w, h, lw){
 }
 function redrawInk(){
   const cv = $('wCan'); if (!cv) return;
+  const wb = $('wb'); if (wb) wb.classList.toggle('blank', !wState.strokes.length && wState.mode === 'memory');
   const ctx = cv.getContext('2d');
   ctx.clearRect(0, 0, cv.width, cv.height);
   ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#243447';
@@ -2371,6 +2495,7 @@ function checkWriting(){
   wState.checked = true;
   const sc = shapeScore(it.ch), n = data ? data.s.length : null, u = wState.strokes.length;
   const verdict = sc >= .62 ? ['good', '✓ Great shape!'] : sc >= .45 ? ['good', '✓ Good try!'] : ['bad', 'Keep practising'];
+  if (sc >= .62) sparkle($('wb'));
   const strokesTxt = n ? (u === n ? `You used ${u} strokes, the same as ${zh(it.ch)}.` : `You used ${u} stroke${u > 1 ? 's' : ''}; ${zh(it.ch)} has ${n}. Watch the stroke order to check.`) : '';
   fb.className = 'fb ' + verdict[0];
   fb.innerHTML = `<span class="head">${verdict[1]}</span><span class="body">The model ${zh(it.ch)} is shown in green on top of your writing. ${strokesTxt}</span>`;
@@ -2868,7 +2993,7 @@ function renderDots(){
 }
 function confetti(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const b=$('board').getBoundingClientRect(),cols=['#3BAA8A','#F4C95D','#243447','#DCEAF4'];
+  const b=$('board').getBoundingClientRect(),cols=['#3BAA8A','#F4C95D','#FF9F87','#FFE6DD'];
   for(let i=0;i<12;i++){
     const d=document.createElement('span');d.className='bit';
     d.style.left=(b.left+b.width/2)+'px';d.style.top=(b.top+b.height/2)+'px';
